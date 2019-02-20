@@ -1,0 +1,90 @@
+@keyframes moveIt {
+from {
+    transform: translateX(0);
+}
+to {
+    transform: translateX(1000px);
+}
+}
+
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+.row{
+    min-height: 100px;
+}
+
+#gamebody{
+
+    background-color: rgb(61, 59, 59);
+
+}
+
+ .board {
+min-height:600px;
+
+ }
+ .jumbotron{
+
+    background-color : transparent !important ;
+ }
+
+ #cstext {
+font-size: 5em;
+color: rgb(48, 70, 48);
+font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+position: relative;
+
+text-transform: uppercase;
+letter-spacing: 4px;
+overflow: hidden;
+background: linear-gradient(90deg, #fff, #000, #fff);
+background-repeat: no-repeat;
+background-size: 80%;
+animation: animate 7s linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: rgba(10, 177, 99, 0.699);
+}
+label{
+    color: white;
+}
+#username {
+
+    font-style:italic;
+    text-align: center;
+}
+input{
+    border-radius: 15px;
+}
+#uemail {
+
+    font-style:italic;
+    text-align: center;
+
+}
+
+ #message {
+
+   
+    font-style:italic;
+    text-align: center;
+    display:inline-block;
+    width: 500px;
+    border: 1px solid black;
+    
+ }
+ #disp {
+    height: 200px;
+    width : 500px;
+border: 1px solid white;
+border-radius:15px;
+overflow:scroll;
+color: white;
+
+ }
