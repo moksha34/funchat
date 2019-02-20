@@ -55,17 +55,19 @@ else {
     }
 function sendMsg (){
     var user =document.getElementById("username");
+    var email =document.getElementById("uemail");
     var message = document.getElementById("message");
     var display = document.getElementById("disp");
     var p = document.createElement("p");
     var date = new Date();
-    
-
-    p.innerText =`${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}-${pad(date.getHours())}:${date.getMinutes()}:${date.getSeconds()} @ ${user.value} : ${message.value}`;
+    var timeOfMsg = `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}-${pad(date.getHours())}:${date.getMinutes()}:${date.getSeconds()}`
+    p.innerText =`${timeOfMsg}  ${user.value} : ${message.value}`;
     display.appendChild(p);
-    message.value=" "
     display.scrollTop =display.scrollHeight;
-
+    socket.emit("new-chat", {user : user.value ,email: email, time: timeOfMsg, chat: message.value });
+    message.value=" "
+    
+ 
 
 
 
@@ -76,4 +78,33 @@ function sendMsg (){
 
 
 </script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:3030');
+  socket.on('msg-from-server', function(evt){
+    var display = document.getElementById("disp");
+    var p = document.createElement("P");
+    p.innerText = evt.msg;
+    display.appendChild(p);
+    console.log(evt.prev);
+    for(var i in evt.prev){
+        var p = document.createElement("P");
+    p.innerText = evt.prev[i].time+" "+evt.prev[i].user +":"+evt.prev[i].chat;
+    display.appendChild(p);
+
+    }
+
+  });
+  socket.on('chat-reply', function(data){
+
+    var display = document.getElementById("disp");
+    var p = document.createElement("p");
+    
+    p.innerText = data.msg
+    display.appendChild(p);
+
+  });
+  socket.on('disconnect', function(){});
+</script>
+```
 </html>
