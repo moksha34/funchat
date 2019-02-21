@@ -48,7 +48,6 @@ background: linear-gradient(90deg, #fff, #000, #fff);
 background-repeat: no-repeat;
 background-size: 80%;
 animation: animate 7s linear infinite;
--webkit-background-clip: text;
 -webkit-text-fill-color: rgba(10, 177, 99, 0.699);
 }
 label{
@@ -85,6 +84,7 @@ input{
 border: 1px solid black;
 border-radius:15px;
 overflow:scroll;
+
 color: white;
 
  }
