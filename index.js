@@ -39,7 +39,7 @@ server.get('/',(req,res)=>{
 
 //console.log(err) ? err :"";
 
-res.sendFile(`${__dirname}\\game.html` );
+res.sendFile(`${__dirname}/game.html` );
 
 })
 
