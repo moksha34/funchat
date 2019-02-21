@@ -81,7 +81,7 @@ function sendMsg (){
 <script src="/socket.io/socket.io.js"></script>
 <script>
 
-  var socket = io('http://10.227.176.6:3030');
+  var socket = io(`http://${location.hostname}:3030`);
 
   socket.on('msg-from-server', function(evt){
     var display = document.getElementById("disp");
