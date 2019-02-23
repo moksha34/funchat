@@ -1,22 +1,15 @@
 module.exports = function mysqldb(){
+try{
+    var connPool
 
 const mysql =require('mysql');
 const options=require('./dbinfo.js');
 
 
 
-const connection = mysql.createConnection(options);
+ connPool = mysql.createPool(options);
 
-connection.connect(err => {
 
-if(err) {
-
-    console.log(err.stack)
-} 
-
-console.log("db connected");
-
-});
 
 
 /***********adding chat to the db **************/
@@ -29,34 +22,23 @@ const addchat = (chatrow,connection)=> {
         }});
     };
     /***********fetching chat to the db **************/
-const getAllChat =(connection)=>{
-   connection.query('SELECT * FROM CHAT_HISTORY',(err,results,fields)=>{
 
-        if(err) {
-    
-            console.log("oh there seems to be a problem with query."+err.stack );
-        }
-
-        for(var i in results) {
-            console.log(results[i].time+" "+results[i].user +":"+results[i].chat);
-        }
-        
-     return results;
-    
-    });
-
-
-};
 
 return {
-    pool: connection,
+    pool: connPool,
     addchat:addchat,
-    getAllChat:getAllChat
+    
+
+}
+
+
+}catch(err){
+return {
+    "error": err
+}
 
 }
 
 
 };
-
-
 
