@@ -16,7 +16,7 @@ to {
     }
   }
 .row{
-    min-height: 100px;
+    min-height: 5%;
 }
 
 #gamebody{
@@ -26,7 +26,7 @@ to {
 }
 
  .board {
-min-height:800px;
+min-height:100%;
 
 
  }
@@ -36,7 +36,7 @@ min-height:800px;
  }*/
 
  #cstext {
-font-size: 4.5em;
+font-size: 4.5rem;
 color: rgb(48, 70, 48);
 font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 text-align: center;
@@ -53,7 +53,7 @@ animation: animate 10s linear infinite;
 img.logo {
 height: 100px;
 position : absolute;
-left:300px;
+left:80%;
 z-index: +3 ;
 
 }
@@ -78,7 +78,7 @@ label{
     text-align: center;
 }
 input{
-    border-radius: 15px;
+    border-radius: 5px;
 }
 #uemail {
 
@@ -93,7 +93,7 @@ input{
     display: inline-block;
     width: 50%;
     position: absolute;
-    top: 450%;
+    top: 550%;
     left: 5%;
     border-radius: 0px;
 }
@@ -106,7 +106,7 @@ input{
     border-radius: 15px;
     overflow: scroll;
     position: absolute;
-    bottom: -350%;
+    bottom: -450%;
     left: 5%;
     color: white;
 }
@@ -119,4 +119,17 @@ input{
  footer {
      color : white;
      text-align: center;
+     position: absolute;
+     bottom : -5%;
+     left : 30%
+ }
+ .inbox {
+position :absolute ;
+left:10%;
+top:200%;
+
+background-color: black ;
+background-blend-mode: color-burn;
+
+
  }
