@@ -26,29 +26,48 @@ to {
 }
 
  .board {
-min-height:600px;
+min-height:800px;
+
 
  }
- .jumbotron{
+/*.jumbotron{
 
     background-color : transparent !important ;
- }
+ }*/
 
  #cstext {
-font-size: 5em;
+font-size: 4.5em;
 color: rgb(48, 70, 48);
 font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 text-align: center;
 position: relative;
-
 text-transform: uppercase;
-letter-spacing: 4px;
+letter-spacing: 5px;
 overflow: hidden;
-background: linear-gradient(90deg, #fff, #000, #fff);
+background: linear-gradient(90deg, #000, #fff, #000);
 background-repeat: no-repeat;
-background-size: 80%;
-animation: animate 7s linear infinite;
+background-size:70%;
+animation: animate 10s linear infinite;
 -webkit-text-fill-color: rgba(10, 177, 99, 0.699);
+}
+img.logo {
+height: 100px;
+position : absolute;
+left:300px;
+z-index: +3 ;
+
+}
+
+.bg {
+
+    border-radius: 15px;
+    box-shadow: black;
+    z-index: -3;
+    position : absolute;
+    height:100%;
+    left :5%;
+   
+    
 }
 label{
     color: white;
@@ -68,23 +87,36 @@ input{
 
 }
 
- #message {
-
-   
-    font-style:italic;
+#message {
+    font-style: italic;
     text-align: center;
-    display:inline-block;
-    width: 500px;
+    display: inline-block;
+    width: 50%;
+    position: absolute;
+    top: 450%;
+    left: 5%;
+    border-radius: 0px;
+}
+
+/* game.css (100, 9) */
+#disp {
+    height: 250%;
+    width: 50%;
     border: 1px solid black;
-    
+    border-radius: 15px;
+    overflow: scroll;
+    position: absolute;
+    bottom: -350%;
+    left: 5%;
+    color: white;
+}
+
+ ::-webkit-scrollbar-track {
+
+    width:5px;
+    background-color: #000;
  }
- #disp {
-    height: 500px;
-    width : 500px;
-border: 1px solid black;
-border-radius:15px;
-overflow:scroll;
-
-color: white;
-
+ footer {
+     color : white;
+     text-align: center;
  }
