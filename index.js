@@ -8,7 +8,7 @@ const conn =mysqlcon.pool;
 io.on("connection" , (socket) => {
 
     console.log("new client connected") ;
-    conn.query('SELECT * FROM CHAT_HISTORY',(err,results,fields)=>{
+    conn.query('SELECT * FROM CHAT_HISTORY LIMIT 15',(err,results,fields)=>{
 
         if(err) {
     
