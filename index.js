@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const httpServer = require('http').Server(server);
 const io = require('socket.io')(httpServer);
-const mysqlcon = require('./mysqlcon.js')();
+const mysqlcon = require('./sqlserv.js')();
 server.use( express.static(__dirname));
 const conn =mysqlcon.pool;
 io.on("connection" , (socket) => {
