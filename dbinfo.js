@@ -1,9 +1,9 @@
 const dboptions = {
  
-        user: 'nodeuser',
-        password: 'nodeuser',
-        database: 'cschat',
-        host: '10.227.231.93',
+        user: process.env.USER,
+        password: process.env.PASSWORD,
+        database: process.env.DB,
+        host: process.env.HOSTIP,
         connectionLimit: 10
         
         }
